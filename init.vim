@@ -10,7 +10,6 @@ set visualbell
 set ignorecase
 set smartcase
 set wrap
-set foldmethod=syntax
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -41,6 +40,17 @@ Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy f
 call plug#end()
 
 set encoding=UTF-8
+
+"-- FOLDING FOR JS--  
+set foldmethod=syntax "syntax highlighting items specify folds  
+"set foldcolumn=1 "defines 1 col at window left, to indicate folding  
+let javaScript_fold=1 "activate folding by JS syntax  
+set foldlevelstart=99 "start file with all folds opened
+
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
 
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
