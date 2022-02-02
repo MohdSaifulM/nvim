@@ -21,6 +21,7 @@ Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType 
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+Plug 'https://github.com/neoclide/coc-tsserver'  " TS Server
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
@@ -36,6 +37,8 @@ Plug 'https://github.com/mxw/vim-jsx' " syntax highlight jsx
 Plug 'https://github.com/pangloss/vim-javascript' " syntax highlight js
 Plug 'https://github.com/junegunn/fzf.vim' " fuzzy finder
 Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy finder repo
+Plug 'https://github.com/SirVer/ultisnips' " Ultisnips engine
+Plug 'https://github.com/honza/vim-snippets' " Ultisnips plug
 
 call plug#end()
 
@@ -126,6 +129,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
 
 " coc config
 let g:coc_global_extensions = [
@@ -135,6 +139,7 @@ let g:coc_global_extensions = [
 	\ 'coc-json',
 	\ 'coc-html',
 	\ 'coc-css',
+	\ 'coc-ultisnips',
 	\ ]
 
 " ctrlp
