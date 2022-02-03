@@ -45,6 +45,7 @@ Plug 'https://github.com/honza/vim-snippets' " Ultisnips plug
 Plug 'https://github.com/tpope/vim-sleuth' " For auto indentations
 Plug 'https://github.com/tpope/vim-fugitive' " For git actions
 Plug 'https://github.com/digitaltoad/vim-pug' " Syntax highlighting for jade files
+Plug 'https://github.com/wakatime/vim-wakatime' " For github readme
 
 call plug#end()
 
