@@ -6,6 +6,7 @@ set visualbell
 set ignorecase
 set smartcase
 set wrap
+set redrawtime=10000
 
 " Commented out for auto indentations
 "set tabstop=4
