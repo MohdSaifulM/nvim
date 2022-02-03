@@ -43,6 +43,7 @@ Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy f
 Plug 'https://github.com/SirVer/ultisnips' " Ultisnips engine
 Plug 'https://github.com/honza/vim-snippets' " Ultisnips plug
 Plug 'https://github.com/tpope/vim-sleuth' " For auto indentations
+Plug 'https://github.com/tpope/vim-fugitive' " For git actions
 Plug 'https://github.com/digitaltoad/vim-pug' " Syntax highlighting for jade files
 
 call plug#end()
