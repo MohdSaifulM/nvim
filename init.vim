@@ -1,15 +1,17 @@
 set number
 set relativenumber
 set autoindent
-"set tabstop=4
-"set shiftwidth=4
-"set smarttab
-"set softtabstop=4
 set mouse=a
 set visualbell
 set ignorecase
 set smartcase
 set wrap
+
+" Commented out for auto indentations
+"set tabstop=4
+"set shiftwidth=4
+"set smarttab
+"set softtabstop=4
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -40,6 +42,7 @@ Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy f
 Plug 'https://github.com/SirVer/ultisnips' " Ultisnips engine
 Plug 'https://github.com/honza/vim-snippets' " Ultisnips plug
 Plug 'https://github.com/tpope/vim-sleuth' " For auto indentations
+Plug 'https://github.com/digitaltoad/vim-pug' " Syntax highlighting for jade files
 
 call plug#end()
 
@@ -128,20 +131,6 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
-
-"let g:UltiSnipsExpandTrigger="<tab>"
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
 
 " coc config
 let g:coc_global_extensions = [
