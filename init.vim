@@ -46,15 +46,16 @@ Plug 'https://github.com/tpope/vim-sleuth' " For auto indentations
 Plug 'https://github.com/tpope/vim-fugitive' " For git actions
 Plug 'https://github.com/digitaltoad/vim-pug' " Syntax highlighting for jade files
 Plug 'https://github.com/wakatime/vim-wakatime' " For github readme
+Plug 'https://github.com/lukas-reineke/indent-blankline.nvim' " Indent line
 
 call plug#end()
 
 set encoding=UTF-8
 
-"-- FOLDING FOR JS--  
-set foldmethod=syntax "syntax highlighting items specify folds  
-"set foldcolumn=1 "defines 1 col at window left, to indicate folding  
-let javaScript_fold=1 "activate folding by JS syntax  
+"-- FOLDING FOR JS--
+set foldmethod=syntax "syntax highlighting items specify folds
+"set foldcolumn=1 "defines 1 col at window left, to indicate folding
+let javaScript_fold=1 "activate folding by JS syntax
 set foldlevelstart=99 "start file with all folds opened
 
 inoremap <F9> <C-O>za
@@ -79,6 +80,12 @@ colorscheme onedark
 " NerdTree
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
+
+" Tabs
+noremap <A-t> :tabnew<cr>
+noremap <A-.> :tabn<cr>
+noremap <A-,> :tabp<cr>
+noremap <A-w> :tabc<cr>
 
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
