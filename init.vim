@@ -20,18 +20,13 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
-Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
-Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
-Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+Plug 'https://github.com/neoclide/coc.nvim' " Auto Completion
 Plug 'https://github.com/neoclide/coc-tsserver'  " TS Server
-Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
-Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
-Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-Plug 'https://github.com/kien/ctrlp.vim' " Fuzzy find files
+Plug 'https://github.com/ctrlpvim/ctrlp.vim' " Fuzzy find files
 Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight' " Highlight modified
 Plug 'https://github.com/ryanoasis/vim-devicons' " Icons pack for nerdtree
 Plug 'https://github.com/airblade/vim-gitgutter' " Indication for git changes
@@ -47,19 +42,19 @@ Plug 'https://github.com/tpope/vim-fugitive' " For git actions
 Plug 'https://github.com/wakatime/vim-wakatime' " For github readme
 Plug 'https://github.com/lukas-reineke/indent-blankline.nvim' " Indent line
 Plug 'https://github.com/sheerun/vim-polyglot' " Syntax highlighting
-"Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Better syntax highlighting but lags
+Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Better syntax highlighting but lags
 
 call plug#end()
 
 " FOR TREESITTER
-"lua << EOF
-"require'nvim-treesitter.configs'.setup {
-  "ensure_installed = "maintained, -- one of all, maintained (parsers with maintainers), or a list of languages
-  "highlight = {
-    "enable = true,              -- false will disable the whole extension
-  "},
-"}
-"EOF
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = 'maintained', -- one of all, maintained (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
 
 set encoding=UTF-8
 
@@ -79,8 +74,6 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 "noremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nnoremap <space> :
-
-nmap <F8> :TagbarToggle<CR>
 
 imap jj <Esc>
 
