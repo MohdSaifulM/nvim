@@ -14,6 +14,8 @@ set redrawtime=10000
 "set smarttab
 "set softtabstop=4
 
+let g:polyglot_disabled = ['autoindent']
+
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
@@ -36,19 +38,28 @@ Plug 'https://github.com/airblade/vim-gitgutter' " Indication for git changes
 Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' " Show modified code icons
 Plug 'https://github.com/scrooloose/nerdcommenter' " commenting
 Plug 'https://github.com/christoomey/vim-tmux-navigator' " tmux navigator
-Plug 'https://github.com/mxw/vim-jsx' " syntax highlight jsx
-Plug 'https://github.com/pangloss/vim-javascript' " syntax highlight js
 Plug 'https://github.com/junegunn/fzf.vim' " fuzzy finder
 Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy finder repo
 Plug 'https://github.com/SirVer/ultisnips' " Ultisnips engine
 Plug 'https://github.com/honza/vim-snippets' " Ultisnips plug
 Plug 'https://github.com/tpope/vim-sleuth' " For auto indentations
 Plug 'https://github.com/tpope/vim-fugitive' " For git actions
-Plug 'https://github.com/digitaltoad/vim-pug' " Syntax highlighting for jade files
 Plug 'https://github.com/wakatime/vim-wakatime' " For github readme
 Plug 'https://github.com/lukas-reineke/indent-blankline.nvim' " Indent line
+Plug 'https://github.com/sheerun/vim-polyglot' " Syntax highlighting
+"Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Better syntax highlighting but lags
 
 call plug#end()
+
+" FOR TREESITTER
+"lua << EOF
+"require'nvim-treesitter.configs'.setup {
+  "ensure_installed = "maintained, -- one of all, maintained (parsers with maintainers), or a list of languages
+  "highlight = {
+    "enable = true,              -- false will disable the whole extension
+  "},
+"}
+"EOF
 
 set encoding=UTF-8
 
@@ -112,6 +123,9 @@ let g:javascript_plugin_jsdoc = 1
 
 " Enable ngdocs highlighting
 let g:javascript_plugin_ngdoc = 1
+
+" Enables syntax highlighting for Flow
+let g:javascript_plugin_flow = 1
 
 let g:python3_host_prog = '/usr/bin/python3'
 
