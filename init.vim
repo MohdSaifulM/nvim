@@ -43,6 +43,8 @@ Plug 'https://github.com/wakatime/vim-wakatime' " For github readme
 Plug 'https://github.com/lukas-reineke/indent-blankline.nvim' " Indent line
 Plug 'https://github.com/sheerun/vim-polyglot' " Syntax highlighting
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Better syntax highlighting but lags
+Plug 'https://github.com/kyazdani42/nvim-web-devicons' " Tab icons for barbar
+Plug 'https://github.com/romgrk/barbar.nvim' " Barbar - buffer/tab style
 
 call plug#end()
 
