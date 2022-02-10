@@ -43,21 +43,21 @@ Plug 'https://github.com/tpope/vim-fugitive' " For git actions
 Plug 'https://github.com/wakatime/vim-wakatime' " For github readme
 Plug 'https://github.com/lukas-reineke/indent-blankline.nvim' " Indent line
 Plug 'https://github.com/sheerun/vim-polyglot' " Syntax highlighting
-Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Better syntax highlighting but lags
+"Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Better syntax highlighting but lags
 Plug 'https://github.com/kyazdani42/nvim-web-devicons' " Tab icons for barbar
 Plug 'https://github.com/romgrk/barbar.nvim' " Barbar - buffer/tab style
 
 call plug#end()
 
 " FOR TREESITTER
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = 'maintained', -- one of all, maintained (parsers with maintainers), or a list of languages
-  highlight = {
-    enable = false,              -- false will disable the whole extension
-  },
-}
-EOF
+"lua << EOF
+"require'nvim-treesitter.configs'.setup {
+  "ensure_installed = 'maintained', -- one of all, maintained (parsers with maintainers), or a list of languages
+  "highlight = {
+    "enable = false,              -- false will disable the whole extension
+  "},
+"}
+"EOF
 
 set encoding=UTF-8
 
@@ -89,10 +89,46 @@ let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
 " Tabs
-noremap <A-t> :tabnew<cr>
-noremap <A-.> :tabn<cr>
-noremap <A-,> :tabp<cr>
-noremap <A-w> :tabc<cr>
+"noremap <A-t> :tabnew<cr>
+"noremap <A-.> :tabn<cr>
+"noremap <A-,> :tabp<cr>
+"noremap <A-w> :tabc<cr>
+
+" Barbar Tabline
+" Move to previous/next
+nnoremap <silent>    <A-,> :BufferPrevious<CR>
+nnoremap <silent>    <A-.> :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
+nnoremap <silent>    <A->> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    <A-1> :BufferGoto 1<CR>
+nnoremap <silent>    <A-2> :BufferGoto 2<CR>
+nnoremap <silent>    <A-3> :BufferGoto 3<CR>
+nnoremap <silent>    <A-4> :BufferGoto 4<CR>
+nnoremap <silent>    <A-5> :BufferGoto 5<CR>
+nnoremap <silent>    <A-6> :BufferGoto 6<CR>
+nnoremap <silent>    <A-7> :BufferGoto 7<CR>
+nnoremap <silent>    <A-8> :BufferGoto 8<CR>
+nnoremap <silent>    <A-9> :BufferLast<CR>
+" Pin/unpin buffer
+nnoremap <silent>    <A-p> :BufferPin<CR>
+" Close buffer
+nnoremap <silent>    <A-c> :BufferClose<CR>
+" Wipeout buffer
+"                          :BufferWipeout<CR>
+" Close commands
+"                          :BufferCloseAllButCurrent<CR>
+"                          :BufferCloseAllButPinned<CR>
+"                          :BufferCloseBuffersLeft<CR>
+"                          :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+nnoremap <silent> <C-s>    :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
 
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
