@@ -46,6 +46,7 @@ Plug 'https://github.com/sheerun/vim-polyglot' " Syntax highlighting
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Better syntax highlighting but lags
 Plug 'https://github.com/kyazdani42/nvim-web-devicons' " Tab icons for barbar
 Plug 'https://github.com/romgrk/barbar.nvim' " Barbar - buffer/tab style
+Plug 'https://github.com/APZelos/blamer.nvim' " inline git blame
 
 call plug#end()
 
