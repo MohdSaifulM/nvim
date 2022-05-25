@@ -10,10 +10,10 @@ set redrawtime=10000
 set termguicolors
 
 " Commented out for auto indentations
-"set tabstop=4
-"set shiftwidth=4
-"set smarttab
-"set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set softtabstop=4
 
 let g:polyglot_disabled = ['autoindent']
 
@@ -47,6 +47,7 @@ Plug 'https://github.com/sheerun/vim-polyglot' " Syntax highlighting
 Plug 'https://github.com/kyazdani42/nvim-web-devicons' " Tab icons for barbar
 Plug 'https://github.com/romgrk/barbar.nvim' " Barbar - buffer/tab style
 Plug 'https://github.com/APZelos/blamer.nvim' " inline git blame
+Plug 'https://github.com/cakebaker/scss-syntax.vim' " SCSS Syntax
 
 call plug#end()
 
